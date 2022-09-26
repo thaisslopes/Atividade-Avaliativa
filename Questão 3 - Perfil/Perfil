@@ -1,0 +1,63 @@
+/*O perfil de uma pessoa pode ser determinado a partir da sua data de
+ * nascimento, conforme exemplificado a seguir. Dada uma data de nascimento,
+ * informe o perfil correspondente.
+
+Exemplo: 13/06/1970
+
+1- 1306 + 1970 = 3276
+2- 32 + 76 = 108
+3- 108/5 = 21 com resto **3**
+
+Tabela:
+
+-> 0 = Tímido
+-> 1 = Sonhador
+-> 2 = Paquerador
+-> 3 = Atraente
+-> 4 = Irresistível
+*/
+
+#include <stdio.h>
+
+int main(void) {
+  int d, mo, a, n1;
+
+  printf("Digite o dia: ");
+  scanf("%d", &d);
+  printf("Digite o mês: ");
+  scanf("%d", &mo);
+  printf("Digite o ano: ");
+  scanf("%d", &a);
+
+  n1 = (d * 100 + mo) +
+       a; // junta os dois dígitos do dia com os dois dígitos do mês
+  n1 = (n1 / 100) +
+       (n1 % 100); // separa os quatro dígitos em grupo de dois e os soma
+  n1 = n1 % 5;     // divide o número por 5 e pega o resto da divisão
+
+  if (n1 == 0) {
+    printf("\nTímido");
+  }
+
+  if (n1 == 1) {
+    printf("\nSonhador");
+  }
+
+  if (n1 == 2) {
+    printf("\nPaquerador");
+  }
+
+  if (n1 == 3) {
+    printf("\nAtraente");
+  }
+
+  if (n1 == 4) {
+    printf("\nIrresistível");
+  }
+
+  if (n1 > 4 || n1 < 0) {
+    printf("Não há resultado.");
+  }
+
+  return 0;
+}
