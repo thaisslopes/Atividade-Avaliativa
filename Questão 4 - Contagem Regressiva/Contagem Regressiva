@@ -1,0 +1,16 @@
+/*Faça um programa que solicite um número inteiro positivo e imprima a contagem
+ * regressiva até 0.*/
+
+#include <stdio.h>
+
+int main(void) {
+  int n;
+  printf("Digite um número inteiro e positivo: ");
+  scanf("%d", &n);
+  printf("\n");    // imprime o próprio número
+  while (n >= 0) { // imprime o restante até 0
+    printf("%d\n", n);
+    n--;
+  }
+  return 0;
+}
