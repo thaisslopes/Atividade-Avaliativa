@@ -1,0 +1,39 @@
+/*Faça um programa que solicite um dados e os guarde em um struct com nome e email e telefone e retorne o tamanho de bytes de cada campo.*/
+
+#include <assert.h>
+#include <stdio.h>
+
+typedef struct {
+  char nome[51];
+  char email[101];
+  int telefone;
+} nome;
+
+int main(void) {
+  nome n;
+  int conta, total=0, tot=0;
+
+  printf("Digite o nome: ");
+  scanf(" %[^\n]", n.nome);
+  printf("Digite o email: ");
+  scanf(" %[^\n]", n.email);
+  printf("Digite o telefone: ");
+  scanf(" %d", &n.telefone);
+
+  while (n.nome[total] != '\0') {//conta a quantidade de dígitos até o seu final, que é marcado com \0, sem contar espaços
+    total++;
+  }
+
+  while (n.email[tot] != '\0') {//conta a quantidade de dígitos até o seu final, que é marcado com \0, sem contar espaços
+    tot++;
+  }
+
+  while (n.telefone != 0) {
+    conta++;
+    n.telefone = n.telefone / 10;//divide por 10 para retirar o último dígito que já foi guardado na soma
+  }
+
+  printf("\nNome: %d dígitos.\nEmail: %d dígitos.\nTelefone: %d dígitos.", total,
+         tot, conta);
+  return 0;
+}
