@@ -1,0 +1,20 @@
+/*A série de Fibonacci é 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ... Os dois primeiros
+ * termos são iguais a 1 e, a partir do terceiro, o termo é dado pela soma dos
+ * dois termos anteriores. Dado um número n≥3, exiba o n-ésimo termo da série de
+ * Fibonacci.*/
+
+#include <stdio.h>
+
+int main(void) {
+  int n, fib1 = 1, fib2 = 1, fib3 = 0, i;
+  printf("Digite a quantidade de termos da sequência de Fibonacci: ");
+  scanf("%d", &n);
+  printf("%d ", fib1);      // imprime o primeiro termo que é 1
+  for (i = 2; i < n; i++) { // o resto da sequência
+    printf("%d ", fib1);
+    fib3 = fib2;
+    fib2 = fib1;
+    fib1 = fib2 + fib3;
+  }
+  return 0;
+}
